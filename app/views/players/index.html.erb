@@ -1,0 +1,31 @@
+<div class="hero">
+  <div class="container">
+    <h2>Ruleta de Colores</h2>
+    <p> Jugar apostando a colores</p>
+    <a href="#">Read More</a>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+  <h2>Players</h2>
+
+    <!--
+    To do: Loop through movies and display each one with this HTML
+    <div class="movie">
+      movie image goes here
+
+      <h3> movie title goes here </h3>
+      <p> movie release year goes here </p>
+    </div>
+    -->
+    <%= @players.each do |p| %>
+      <div class="player">
+        <h3><%= p.first_name %> <%= p.last_name %></h3>
+
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
