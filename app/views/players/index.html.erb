@@ -22,7 +22,7 @@
     <%= @players.each do |p| %>
       <div class="player">
         <h3><%= p.first_name %> <%= p.last_name %></h3>
-
+        <%= link_to "Ver", player_path(p) %>
       </div>
 
     <% end %>

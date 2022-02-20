@@ -1,0 +1,26 @@
+<div class="main player">
+  <div class="container">
+    <div class="player">
+
+      <!-- Display the movie's info here -->
+      <div class="info">
+        <!-- movie image -->
+        <h3 class="player-name"><%= @player.first_name%> <%= @player.last_name%>  </h3>
+        <p class="player-rut"> <%= @player.rut%> </p>
+      </div>
+    </div>
+
+    <h2>Raffles</h2>
+    <!-- Display each actor's info here -->
+
+
+      <%= @player.raffles.each do |r|%>
+      <div class="raffle">
+        <h3 class="color"><%=r.color%></h3>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</div>
