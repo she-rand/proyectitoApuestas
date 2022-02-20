@@ -1,0 +1,25 @@
+<div class="main raffle">
+  <div class="container">
+    <div class="raffle">
+
+      <!-- Display the movie's info here -->
+      <div class="info">
+        <!-- movie image -->
+        <h3 class="raffle-color"><%= @raffle.color%>  </h3>
+      </div>
+    </div>
+
+    <h2>Raffles</h2>
+    <!-- Display each actor's info here -->
+
+
+      <%= @raffle.player.each do |p|%>
+      <div class="player">
+        <h3 class="Name"><%=p.first_name%></h3>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</div>

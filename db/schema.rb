@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_19_205004) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_20_012233) do
   create_table "bets", force: :cascade do |t|
     t.integer "bet_amount"
     t.string "bet_color"
@@ -28,6 +28,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_19_205004) do
     t.string "rut"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "players_raffles", id: false, force: :cascade do |t|
+    t.integer "player_id", null: false
+    t.integer "raffle_id", null: false
   end
 
   create_table "raffles", force: :cascade do |t|
