@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/players' => 'players#index'
 
+  get '/players/new'=>'players#new'
+
+
   get '/players/:id' => 'players#show', as: :player
+
+
+  post 'players' => 'players#create'
 
   get '/raffles' => 'raffles#index'
 

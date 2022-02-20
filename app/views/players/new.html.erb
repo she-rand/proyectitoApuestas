@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="container">
+    <img src="https://content.codecademy.com/courses/learn-rails/img/logo-1m.svg">
+    <h1>Player</h1>
+  </div>
+</div>
+
+<div class="players">
+  <div class="container">
+
+    <!-- Your code here -->
+   <%= form_for(@player) do |p| %>
+  <div class="field">
+    <%= p.text_field :first_name %>
+    <%= p.text_field :last_name %>
+    <%= p.text_field :rut %>
+
+  </div>
+  <div class="actions">
+    <%= p.submit "Create" %>
+  </div>
+<% end %>
+
+
+  </div>
+</div>
