@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="container">
+    <img src="https://content.codecademy.com/courses/learn-rails/img/logo-1m.svg">
+    <h1>Player</h1>
+  </div>
+</div>
+
+<div class="players">
+  <div class="container">
+
+    <!-- Your code here -->
+    <%= form_for [@player, @transfer] do |f| %>
+   <div class="field">
+     <%= f.hidden_field :player_id , :value=>params[:player_id] %>
+     <%= f.label :balance %><br />
+     <%= f.text_field :balance %>
+   </div>
+
+   <div class="actions">
+     <%= f.submit "Create" %>
+   </div>
+
+ <% end %>
+
+
+
+  </div>
+</div>

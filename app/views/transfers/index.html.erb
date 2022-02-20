@@ -1,0 +1,27 @@
+<div class="main player">
+  <div class="container">
+    <div class="player">
+
+      <!-- Display the movie's info here -->
+      <div class="info">
+        <!-- movie image -->
+        <h3 class="player-name"><%= @player.first_name%> <%= @player.last_name%>  </h3>
+        <p class="player-rut"> <%= @player.rut%> </p>
+        <%= link_to "Edit" , edit_player_path(@player) %>
+      </div>
+    </div>
+
+    <h2>Wallet</h2>
+    <!-- Display each actor's info here -->
+
+
+      <%= @transfers.each do |w|%>
+      <div class="raffle">
+        <h3 class="color"><%=w.balance%></h3>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</div>

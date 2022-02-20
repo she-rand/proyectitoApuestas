@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_20_012233) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_20_213610) do
   create_table "bets", force: :cascade do |t|
     t.integer "bet_amount"
     t.string "bet_color"
@@ -41,12 +41,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_012233) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "wallet_statuses", force: :cascade do |t|
+  create_table "transfers", force: :cascade do |t|
     t.integer "balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "player_id", null: false
+    t.index ["player_id"], name: "index_transfers_on_player_id"
   end
 
   add_foreign_key "bets", "players"
   add_foreign_key "bets", "raffles"
+  add_foreign_key "transfers", "players"
 end

@@ -23,4 +23,15 @@ Rails.application.routes.draw do
   get '/raffles/new' => 'raffles#new'
 
   post 'raffles' => 'raffles#create'
+
+  resources :players do
+    resources :transfers
+  end
+
+  get '/players/:player_id/transfers' => 'transfers#index'
+
+  get '/players/:player_id/transfers/new' =>'transfers#new'
+
+  post '/players/:player_id/transfers' => 'transfers#create'
+
 end

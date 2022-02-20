@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
   def show
     @player=Player.find(params[:id])
     @raffles=@player.raffles
+    @transfer=@player.transfers
   end
   def new
     @player=Player.new
