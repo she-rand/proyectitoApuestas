@@ -7,6 +7,7 @@
         <!-- movie image -->
         <h3 class="player-name"><%= @player.first_name%> <%= @player.last_name%>  </h3>
         <p class="player-rut"> <%= @player.rut%> </p>
+        <%= link_to "Edit" , edit_player_path(@player) %>
       </div>
     </div>
 

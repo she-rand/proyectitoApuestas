@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="container">
+    <img src="https://content.codecademy.com/courses/learn-rails/img/logo-1tm.svg" width="80">
+    <h1>BokenjiKan</h1>
+  </div>
+</div>
+
+<div class="destination">
+  <div class="container">
+
+
+    <!-- Your code here -->
+    <%= form_for(@player) do |p| %>
+  <div class="name">
+    <%= p.text_field :first_name %><br>
+    <%= p.text_field :last_name %>
+    <%= p.text_field :rut %>
+
+  </div>
+  <div class="actions">
+    <%= p.submit "Edit" %>
+  </div>
+<% end %>
+
+  </div>
+</div>
