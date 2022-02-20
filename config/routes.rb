@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   get '/raffles' => 'raffles#index'
 
   get '/raffle/:id' => 'raffles#show' , as: :raffle
+
+  get '/raffles/new' => 'raffles#new'
+
+  post 'raffles' => 'raffles#create'
 end
