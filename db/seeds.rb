@@ -10,4 +10,4 @@ players=Player.create([{first_name:"Eufranio",last_name:"Perez",rut:"1-1"},{firs
 raffles=Raffle.create([{color:"rojo"},{color:"rojo"},{color:"verde"},{color:"negro"},{color:"verde"},{color:"negro"}])
 bets=Bet.create([{bet_amount:"4000",bet_color:"rojo",player:players[0],raffle:raffles[0]}])
 
-transfers=Transfer.create([{balance:"10000",player:players[0]},{balance:"12000",player:players[0]}])
+transfers=Transfer.create([{amount:"10000",player:players[0]},{amount:"12000",player:players[0]}])

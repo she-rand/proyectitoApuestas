@@ -12,8 +12,8 @@
     <%= form_for [@player, @transfer] do |f| %>
    <div class="field">
      <%= f.hidden_field :player_id , :value=>params[:player_id] %>
-     <%= f.label :balance %><br />
-     <%= f.text_field :balance %>
+     <%= f.label :amount %><br />
+     <%= f.text_field :amount %>
    </div>
 
    <div class="actions">
