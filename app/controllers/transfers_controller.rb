@@ -4,17 +4,14 @@ def index
   @transfers=Transfer.all
 end
 def new
-  @player=Player.find(params[:id])
+  @player=Player.find(params[:player_id])
   @transfer=Transfer.new
 end
-private
-def transfer_params
-  params.require(:transfer).permit(:balance)
-end
+
 
 def create
-  @player=Player.find(params[:id])
-  @tranfer=@player.build(params[:transfer])
+  @player=Player.find(params[:player_id])
+  @transfer=@player.transfers.build(transfer_params)
   if @transfer.save
     redirect_to(:action=>'index',:id=>@player.id)
   else
@@ -22,4 +19,10 @@ def create
 
   end
 end
+
+private
+def transfer_params
+  params.require(:transfer).permit(:balance)
+end
+
 end

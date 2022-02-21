@@ -22,6 +22,18 @@
 
     <% end %>
 
+    <h2>Bets</h2>
+
+
+      <%= @bets.each do |b|%>
+      <div class="raffle">
+        <h3 class="color"><%=b.bet_color%></h3>
+        <h3 class="color"><%=b.bet_amount%></h3>
+
+      </div>
+    <% end %>
+
+
 
   </div>
 </div>

@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
   def show
     @player=Player.find(params[:id])
     @raffles=@player.raffles
+    @bets=@player.bets
     @transfer=@player.transfers
   end
   def new
