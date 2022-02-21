@@ -13,10 +13,13 @@ class PlayersController < ApplicationController
   end
   def create
     @player=Player.new(player_params)
+    @transfer=@player.transfers.build({amount:"10000"})
+
     if @player.save
+
       redirect_to '/players'
     else
-      render 'new'
+      render '/new'
     end
   end
   def edit
