@@ -1,7 +1,7 @@
 class TransfersController < ApplicationController
 def index
   @player=Player.find(params[:player_id])
-  @transfers=Transfer.all
+  @transfers=@player.transfers
 end
 def new
   @player=Player.find(params[:player_id])
@@ -22,7 +22,7 @@ end
 
 private
 def transfer_params
-  params.require(:transfer).permit(:balance)
+  params.require(:transfer).permit(:amount)
 end
 
 end
