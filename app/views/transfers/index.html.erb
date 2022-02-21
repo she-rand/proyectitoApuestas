@@ -17,10 +17,12 @@
 
       <%= @transfers.each do |w|%>
       <div class="raffle">
-        <h3 class="color"><%=w.balance%></h3>
+        <h3 class="color"><%=w.amount%></h3>
       </div>
 
     <% end %>
+    <h2>Wallet</h2>
+    <p>balance <%=Transfer.balance(@transfers) %></p>
 
 
   </div>
