@@ -3,6 +3,9 @@ class RafflesController < ApplicationController
     @weather=Weather.find(params[:weather_id])
     @raffles=@weather.raffles
   end
+  def home
+    @raffles=Raffle.all
+  end
 
   def new
     @weather=Weather.find(params[:weather_id])
