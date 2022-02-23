@@ -8,6 +8,18 @@
 
 <div class="main">
   <div class="container">
+
+    <div class="info">
+      <!-- movie image -->
+      <h3 class="player-name"><%= @weather.forecast_date%> </h3>
+      <p class="player-rut"> <%= @weather.created_at%> </p>
+      <p class="player-rut"> <%= @weather.forecast_temp%> </p>
+
+    </div>
+
+  </div>
+
+
   <h2>Raffles</h2>
 
     <!--
@@ -25,7 +37,7 @@
       </div>
 
     <% end %>
-    <%= link_to "Create", 'raffles/new' %>
+    <%= link_to "Create", new_weather_raffle_path(@weather) %>
 
   </div>
 </div>
