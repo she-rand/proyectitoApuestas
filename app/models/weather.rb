@@ -23,13 +23,14 @@ class Weather < ApplicationRecord
     date=Time.now
     weathers=Weather.all
     finded=false
+
     weathers.each do |weather|
       if(weather.created_at.day==date.day&&weather.created_at.month==date.month&&weather.created_at.year==date.year)
         finded=true
         return weather
-
       end
     end
+
     return self.forecast_from_api()
 
   end
