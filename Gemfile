@@ -74,3 +74,11 @@ end
 
 #Lo agregue yo
 gem "httparty"
+
+gem 'redis'
+
+gem "sidekiq"
+
+gem "sidekiq-cron", "~> 1.1"
+
+gem 'sass-rails'
