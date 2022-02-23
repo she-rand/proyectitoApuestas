@@ -9,12 +9,13 @@
   <div class="container">
 
     <!-- Your code here -->
-   <%= form_for(@raffle) do |r| %>
-  <div class="field">
+   <%= form_for [@weather,@raffle] do |f| %>
+      <div class="field">
+        <%= f.hidden_field :weather_id , :value=>params[:weather_id] %>
 
-  </div>
+      </div>
   <div class="actions">
-    <%= r.submit "Create" %>
+    <%= f.submit "Create" %>
   </div>
 <% end %>
 
