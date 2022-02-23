@@ -16,13 +16,6 @@ Rails.application.routes.draw do
 
   post 'players' => 'players#create'
 
-  get '/raffles' => 'raffles#index'
-
-  get '/raffle/:id' => 'raffles#show' , as: :raffle
-
-  get '/raffles/new' => 'raffles#new'
-
-  post 'raffles' => 'raffles#create'
 
   resources :players do
     resources :transfers
@@ -34,4 +27,18 @@ Rails.application.routes.draw do
 
   post '/players/:player_id/transfers' => 'transfers#create'
 
+  get 'weathers' => 'weathers#index'
+
+
+  resources :weathers do
+    resources :raffles
+  end
+
+  get '/weathers/:weather_id/raffles' => 'raffles#index'
+
+#  get '/weathers/:weather_id/raffles/:id' => 'raffles#show' , as: :raffle
+
+  get '/weathers/:weather_id/raffles/new' => 'raffles#new'
+
+  post '/weathers/:weather_id/raffles' => 'raffles#create'
 end
