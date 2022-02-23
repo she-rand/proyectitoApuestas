@@ -1,7 +1,6 @@
 <div class="header">
   <div class="container">
-    <img src="https://content.codecademy.com/courses/learn-rails/img/logo-1tm.svg" width="80">
-    <h1>BokenjiKan</h1>
+    <%= image_tag ("ruleta.png") %>
   </div>
 </div>
 
@@ -12,8 +11,11 @@
     <!-- Your code here -->
     <%= form_for(@player) do |p| %>
   <div class="name">
+    <%= p.label :nombre %>
     <%= p.text_field :first_name %><br>
+    <%= p.label :apellido %>
     <%= p.text_field :last_name %>
+    <%= p.label :rut %>
     <%= p.text_field :rut %>
 
   </div>

@@ -1,28 +1,41 @@
-<div class="main player">
+<div class="header">
   <div class="container">
-    <div class="player">
+    <%= image_tag ("ruleta.png") %>
 
-      <!-- Display the movie's info here -->
+  </div>
+</div>
+<div class="main">
+  <div class="container">
+    <h2>Jugador</h2>
+    <div class="player">      
       <div class="info">
         <!-- movie image -->
-        <h3 class="player-name"><%= @player.first_name%> <%= @player.last_name%>  </h3>
-        <p class="player-rut"> <%= @player.rut%> </p>
+        <h2 class="player-name"><%= @player.first_name%> <%= @player.last_name%> <%= @player.rut%>  </h2>
         <%= link_to "Edit" , edit_player_path(@player) %>
       </div>
     </div>
 
-    <h2>Wallet</h2>
+
+    <h2>Wallet Transfers</h2>
     <!-- Display each actor's info here -->
 
+      <div class="transfers">
+        <% @transfers.each do |w|%>
+        <div class="raffle">
+          <h3 class="color">$<%=w.amount%></h3>
+          <p> <%=w.created_at%></p>
 
-      <%= @transfers.each do |w|%>
-      <div class="raffle">
-        <h3 class="color"><%=w.amount%></h3>
+        </div>
+      <% end %>
+        <h1>Balance:$ <%=Transfer.balance(@transfers) %></h1>
+        <div class="actions">
+          <%= link_to "Create" , new_player_transfer_path(@player) %>
+
+        </div>
       </div>
 
-    <% end %>
-    <h2>Wallet</h2>
-    <p>balance <%=Transfer.balance(@transfers) %></p>
+
+
 
 
   </div>

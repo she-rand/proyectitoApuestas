@@ -1,37 +1,40 @@
-<div class="main player">
+<div class="header">
   <div class="container">
-    <div class="player">
+    <%= image_tag ("ruleta.png") %>
 
-      <!-- Display the movie's info here -->
-      <div class="info">
+  </div>
+</div>
+<div class="main">
+  <div class="container">
+
+
+      <h2>Jugador</h2>
+      <div class="player">
         <!-- movie image -->
-        <h3 class="player-name"><%= @player.first_name%> <%= @player.last_name%>  </h3>
-        <p class="player-rut"> <%= @player.rut%> </p>
+        <h3 class="player-name"><%= @player.first_name%> <%= @player.last_name%> <%= @player.rut%>  </h3>
         <%= link_to "Edit" , edit_player_path(@player) %>
       </div>
-    </div>
+
 
     <h2>Raffles</h2>
     <!-- Display each actor's info here -->
 
+    <div class="raffles">
+          <% @player.bets.each do |r|%>
+            <div class="raffle">
+              <h3 class="color">Ruleta: <%=r.raffle.color%> Apuesta:$ <%=r.bet_amount%> Color:<%=r.bet_color%></h3>
 
-      <%= @player.raffles.each do |r|%>
-      <div class="raffle">
-        <h3 class="color"><%=r.color%></h3>
-      </div>
+            </div>
 
-    <% end %>
-
-    <h2>Bets</h2>
+        <% end %>
+    </div>
 
 
-      <%= @bets.each do |b|%>
-      <div class="raffle">
-        <h3 class="color"><%=b.bet_color%></h3>
-        <h3 class="color"><%=b.bet_amount%></h3>
 
-      </div>
-    <% end %>
+
+
+
+
 
 
 

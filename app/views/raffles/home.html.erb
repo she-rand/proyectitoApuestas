@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="container">
+    <%= image_tag ("ruleta.png") %>
+
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+    <div class="raffles">
+      <h1>Raffles</h1>
+      <% @raffles.each do |r| %>
+        <div class="raffle">
+          <h2>Ruleta: <%= r.color %> </h2>
+            <% r.bets.each do |b| %>
+
+                <h3> Apuesta: $<%= b.bet_amount %> Color: <%= b.bet_color %> Jugador: <%= b.player.first_name %> <%= b.player.last_name %></h3>
+
+
+            <% end %>
+        </div>
+      <% end %>
+    </div>
+
+
+
+  </div>
+
+</div>

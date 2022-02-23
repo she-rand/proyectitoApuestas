@@ -1,13 +1,13 @@
-<div class="hero">
+<div class="header">
   <div class="container">
-    <h2>Ruleta de Colores</h2>
-    <p> Jugar apostando a colores</p>
-    <a href="#">Read More</a>
+    <%= image_tag ("ruleta.png") %>
+
   </div>
 </div>
 
 <div class="main">
-  <div class="container">
+  <div class="players">
+    <div class="container">
   <h2>Players</h2>
 
     <!--
@@ -19,14 +19,22 @@
       <p> movie release year goes here </p>
     </div>
     -->
-    <%= @players.each do |p| %>
+    <% @players.each do |p| %>
       <div class="player">
         <h3><%= p.first_name %> <%= p.last_name %></h3>
         <%= link_to "Ver", player_path(p) %>
+          <%= link_to "Edit" , edit_player_path(p) %>
+          <%= link_to "Transfer" , player_transfers_path(p) %>
+
       </div>
 
     <% end %>
-    <%= link_to "New Player", '/players/new' %>
+    <div class="actions">
+        <%= link_to "New Player", '/players/new' %>
 
+    </div>
+
+    </div>
   </div>
+
 </div>

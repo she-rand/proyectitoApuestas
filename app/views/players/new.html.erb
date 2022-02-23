@@ -11,13 +11,15 @@
     <!-- Your code here -->
    <%= form_for(@player) do |p| %>
   <div class="field">
+    <%= p.label :nombre %>
     <%= p.text_field :first_name %>
+    <%= p.label :apellido %>
     <%= p.text_field :last_name %>
+    <%= p.label :rut %>
     <%= p.text_field :rut %>
-
   </div>
   <div class="actions">
-    <%= p.submit "Create" %>
+    <%= p.submit "Crear" %>
   </div>
 <% end %>
 
