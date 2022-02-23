@@ -1,47 +1,45 @@
 class RafflesController < ApplicationController
   def index
-    @raffles=Raffle.all
+    @weather=Weather.find(params[:weather_id])
+    @raffles=@weather.raffles
   end
-  def show
-    @raffle=Raffle.find(params[:id])
-    @players=@raffle.players
-  end
+
   def new
+    @weather=Weather.find(params[:weather_id])
     @raffle=Raffle.new
+
   end
 
   def create
-    color=random_color()
-    @raffle=Raffle.new({color:color})
+    @weather=Weather.find(params[:weather_id])
+
+    color=Raffle.random_color()
+    @raffle=Raffle.create({color:color,weather:@weather})
     @players=Player.all
 
     @players.each do |player|
-      color=random_color()
+      color=Raffle.random_color()
+
+
       @transfers=player.transfers
       bet_amount=Transfer.calc_bet_amount(@transfers)
       if bet_amount>0
-        @bet=@raffle.bets.new({bet_color:color,bet_amount:bet_amount, player:player})
+        @bet=@raffle.bets.create({bet_color:color,bet_amount:bet_amount, player:player})
+        Bet.pay_bet(@bet)
+        #@transfer=Transfer.create({amount:"10074",player:player})
+
+
       end
     end
 
     if @raffle.save
-      redirect_to '/raffles'
+      redirect_to(controller:'raffles', action:'index',id:@weather.id)
     else
       render '/new'
     end
   end
 
-  def random_color
-    nrandom=rand(99)
-    if nrandom==0||nrandom==1
-      color='verde'
-    elsif nrandom>1&& nrandom<50
-      color='rojo'
-    else
-      color='negro'
-    end
-    color
-  end
+
 
   private
   def raffle_params
