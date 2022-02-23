@@ -34,6 +34,8 @@ Rails.application.routes.draw do
     resources :raffles
   end
 
+  get 'raffles' => 'raffles#home'
+
   get '/weathers/:weather_id/raffles' => 'raffles#index'
 
 #  get '/weathers/:weather_id/raffles/:id' => 'raffles#show' , as: :raffle
