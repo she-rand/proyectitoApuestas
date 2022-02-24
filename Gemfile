@@ -13,7 +13,7 @@ gem "sprockets-rails"
 #gem "sqlite3", "~> 1.4"
 #Reemplazado para Heroku
 gem 'sqlite3', group: :development
-gem 'pg', '0.18.1', group: :production
+gem 'pg', '~> 0.20', group: :production
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
