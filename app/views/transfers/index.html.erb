@@ -7,7 +7,7 @@
 <div class="main">
   <div class="container">
     <h2>Jugador</h2>
-    <div class="player">      
+    <div class="player">
       <div class="info">
         <!-- movie image -->
         <h2 class="player-name"><%= @player.first_name%> <%= @player.last_name%> <%= @player.rut%>  </h2>
@@ -29,7 +29,7 @@
       <% end %>
         <h1>Balance:$ <%=Transfer.balance(@transfers) %></h1>
         <div class="actions">
-          <%= link_to "Create" , new_player_transfer_path(@player) %>
+          <%= link_to "New Transfer" , new_player_transfer_path(@player) %>
 
         </div>
       </div>
