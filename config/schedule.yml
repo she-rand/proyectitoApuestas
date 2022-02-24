@@ -1,3 +1,7 @@
 my_first_job:
   cron: "*/1 * * * *"
-  class: "WorkerNameJob"
+  class: "RaffleProcessJob"
+
+second_job:
+  cron: "*/1 * * * *"
+  class: "MoneyJob"
