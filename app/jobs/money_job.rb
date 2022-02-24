@@ -3,9 +3,9 @@ class MoneyJob
 
   def perform(*args)
     # Do something
-    logger.info ":::::::::::::::::::: "
-    logger.info "Repartiendo Money Job:::::::::::::::::::: "
-    logger.info ":::::::::::::::::::: "
+    Transfer.transfer_to_all()
+    logger.info ":::::::::::Repartiendo Money Job:::::::::::::::::::: "
+
 
   end
 end

@@ -8,6 +8,13 @@ class Transfer < ApplicationRecord
     total
   end
 
+  def self.transfer_to_all
+    players=Player.all
+    players.each do |player|
+      Transfer.create({amount:"10000",player:player})
+    end
+  end
+
   def self.calc_bet_amount(transfers)
     total=self.balance(transfers)
     weather=Weather.forecast_today()
