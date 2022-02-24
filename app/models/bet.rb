@@ -6,7 +6,7 @@ class Bet < ApplicationRecord
     @raffle=bet.raffle
     transfer_amount=0
 
-    if(@raffle.color==bet.bet_color&&bet_color=="verde")
+    if(@raffle.color==bet.bet_color&&bet.bet_color=="verde")
       transfer_amount=bet.bet_amount.to_i*15
     elsif(@raffle.color==bet.bet_color)
       transfer_amount=bet.bet_amount.to_i
